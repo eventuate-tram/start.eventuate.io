@@ -1,8 +1,8 @@
 version: 2
 jobs:
-  build-and-all:
+  build-all:
     machine: true
-    working_directory: ~/start.spring.io
+    working_directory: ~/start.eventuate.io
     steps:
       - checkout
       - run: TERM=dumb ./build-all.sh

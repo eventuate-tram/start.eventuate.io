@@ -2,4 +2,4 @@
 
 set -e
 
-./mvnw install -DskipTests
+./mvnw package -DskipTests

@@ -13,25 +13,25 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(CustomInitializrProperties.class)
 public class CustomInitializrConfiguration {
 
-	@Bean
-	public DefaultInitializrMetadataProvider customInitializrMetadataProvider(InitializrProperties initializrProperties,
-																			  CustomInitializrProperties customInitializrProperties,
-																			  InitializrMetadataUpdateStrategy initializrMetadataUpdateStrategy) {
-		return new DefaultInitializrMetadataProvider(
-				InitializrMetadataBuilder
-						.fromInitializrProperties(customInitializrProperties.getInitializr())
-						.withInitializrProperties(initializrProperties, true)
-						.build(),
-				initializrMetadataUpdateStrategy);
-	}
+  @Bean
+  public DefaultInitializrMetadataProvider customInitializrMetadataProvider(InitializrProperties initializrProperties,
+                                                                            CustomInitializrProperties customInitializrProperties,
+                                                                            InitializrMetadataUpdateStrategy initializrMetadataUpdateStrategy) {
+    return new DefaultInitializrMetadataProvider(
+            InitializrMetadataBuilder
+                    .fromInitializrProperties(customInitializrProperties.getInitializr())
+                    .withInitializrProperties(initializrProperties, true)
+                    .build(),
+            initializrMetadataUpdateStrategy);
+  }
 
-	@Bean
-	public BuildCustomizer customMavenBuildCustomizer() {
-		return new CustomMavenBuildCustomizer();
-	}
+  @Bean
+  public BuildCustomizer customMavenBuildCustomizer() {
+    return new CustomMavenBuildCustomizer();
+  }
 
-	@Bean
-	public BuildCustomizer customGradleBuildCustomizer() {
-		return new CustomGradleBuildCustomizer();
-	}
+  @Bean
+  public BuildCustomizer customGradleBuildCustomizer() {
+    return new CustomGradleBuildCustomizer();
+  }
 }

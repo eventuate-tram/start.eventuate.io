@@ -2,5 +2,5 @@
 
 set -e
 
-./mvnw install -DskipTests
+./build-all.sh
 docker-compose up --build -d
