@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build-and-all:
+    machine: true
+    working_directory: ~/start.spring.io
+    steps:
+      - checkout
+      - run: TERM=dumb ./build-all.sh
+      - run:
+          name: Save build results
+          command: |
+            mkdir -p ~/container-logs
+          when: always
+      - store_artifacts:
+          path: ~/container-logs
+workflows:
+  version: 2
+  build-test-and-deploy:
+    jobs:
+      - build-all

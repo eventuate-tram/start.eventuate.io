@@ -1,0 +1,102 @@
+custom:
+  initializr:
+
+    env:
+      repositories:
+        my-api-repo-1:
+          name: repo1
+          url: https://example.com/repo1
+
+    dependencies:
+      - name: Eventuate Local
+        content:
+          - name: Eventuate Local
+            id: eventuatelocal
+            groupId: io.eventuate.local.java
+            artifactId: eventuate-local-java-spring-jdbc
+            version: 0.32.0.RC5
+            scope: compile
+            description: A framework for developing (microservice-based) applications.
+            starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-local/eventuate-local
+      - name: Eventuate Tram
+        content:
+          - name: Basic messaging
+            id: eventuatetrambasicmessaging
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-spring-messaging
+            version: 0.24.0.RC5
+            scope: compile
+            description: A framework for transactional messaging.
+            starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Domain Events
+            id: eventuatetramdomainevents
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-spring-events
+            version: 0.24.0.RC5
+            scope: compile
+            description: A framework for transactional messaging.
+            starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Command/Async Reply messaging
+            id: eventuatetramcommands
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-spring-commands
+            version: 0.24.0.RC5
+            scope: compile
+            description: A framework for transactional messaging.
+            starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Kafka Transport
+            id: eventuatetramkafka
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-spring-jdbc-kafka
+            version: 0.24.0.RC5
+            scope: compile
+            description: JDBC and Apache Kafka as the underlying messaging transport.
+            starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: ActiveMQ Transport
+            id: eventuatetramactivemq
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-jdbc-activemq
+            version: 0.24.0.RC5
+            scope: compile
+            description: JDBC and Apache ActiveMQ as the underlying messaging transport.
+            starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: RabbitMQ Transport
+            id: eventuatetramrabbitmqmq
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-jdbc-rabbitmq
+            version: 0.24.0.RC5
+            scope: compile
+            description: JDBC and RabbitMQ as the underlying messaging transport.
+            starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Redis Transport
+            id: eventuatetramredis
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-jdbc-redis
+            version: 0.24.0.RC5
+            scope: compile
+            description: JDBC and Redis as the underlying messaging transport.
+            starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
