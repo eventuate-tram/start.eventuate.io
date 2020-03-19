@@ -17,4 +17,5 @@ class CustomInitializrProperties {
 	public void setInitializr(InitializrProperties initializr) {
 		this.initializr = initializr;
 	}
+
 }
