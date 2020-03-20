@@ -2,8 +2,13 @@
 
 #mkdir -p ~/junit ~/container-logs
 
-mkdir -p ~/container-logs
-docker ps -a > ~/container-logs/containers.txt
-#find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/junit/ \;
-sudo bash -c 'find /var/lib/docker/containers -name "*-json.log" -exec cp {} ~/container-logs \;'
-sudo bash -c 'find  ~/container-logs -type f -exec chown circleci {} \;'
+DIR=~/container-logs
+
+mkdir -p ${DIR}
+docker ps -a > ${DIR}/containers.txt
+
+for container in $(docker ps -a --format '{{.Names}}' ) ; do
+  docker logs "$container" > "${DIR}/${container}.log"
+done
+
+sudo bash -c 'find ~/container-logs -type f -exec chown circleci {} \;'
