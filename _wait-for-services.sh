@@ -1,23 +1,31 @@
 #! /bin/bash
 
-host=$1
-ports=$2
+path=$1
+shift
+ports=$*
 
-shift 2
+echo $path
+echo $ports
+
+host=$DOCKER_HOST_IP
 
 done=false
+
+
 while [[ "$done" = false ]]; do
 	for port in $ports; do
-		curl --fail http://${host}:${port}/actuator/health >& /dev/null
+		url=http://${host}:${port}$path
+		curl --fail $url >& /dev/null
 		if [[ "$?" -eq "0" ]]; then
 			done=true
 		else
 			done=false
+			echo $url
 			break
 		fi
 	done
 	if [[ "$done" = true ]]; then
-		echo services are started
+		echo connected
 		break;
   fi
 	echo -n .

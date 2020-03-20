@@ -10,7 +10,7 @@ MAVEN_URL="http://$DOCKER_HOST_IP:8080/starter.zip?type=maven-project&language=j
 rm -rf demo && rm -rf demo.zip
 
 ./build-and-run.sh
-./wait-for-services.sh $DOCKER_HOST_IP "8080"
+./_wait-for-services.sh /actuator/health 8080
 
 #TEST gradle build
 curl $GRADLE_URL -o demo.zip
