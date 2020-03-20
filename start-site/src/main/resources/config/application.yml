@@ -1,12 +1,5 @@
 custom:
   initializr:
-
-    env:
-      repositories:
-        my-api-repo-1:
-          name: repo1
-          url: https://example.com/repo1
-
     dependencies:
       - name: Eventuate Local
         content:
@@ -17,6 +10,17 @@ custom:
             version: 0.32.0.RC5
             scope: compile
             description: A framework for developing (microservice-based) applications.
+            starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-local/eventuate-local
+          - name: Eventuate Local Test Suport
+            id: eventuatelocaltestsupport
+            groupId: io.eventuate.client.java
+            artifactId: eventuate-client-java-spring-jdbc
+            version: 0.23.0.RC5
+            scope: test
+            description: Embedded JDBC-based version for writing integration tests
             starter: false
             links:
               - rel: reference
@@ -100,3 +104,27 @@ custom:
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
+      - name: Eventuate Tram Sagas
+        content:
+          - name: Saga Orchestrator
+            id: eventuatetramsagaorchestrator
+            groupId: io.eventuate.tram.sagas
+            artifactId: eventuate-tram-sagas-spring-orchestration-simple-dsl
+            version: 0.13.0.RC5
+            scope: compile
+            description: Orchestrator part of sagas framework
+            starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-sagas
+          - name: Saga Participant
+            id: eventuatetramsagaparticipant
+            groupId: io.eventuate.tram.sagas
+            artifactId: eventuate-tram-sagas-spring-participant
+            version: 0.13.0.RC5
+            scope: compile
+            description: Participant part of sagas framework
+            starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-sagas
