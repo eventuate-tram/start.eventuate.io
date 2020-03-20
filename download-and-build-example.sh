@@ -18,7 +18,7 @@ docker ps
 
 #TEST gradle build
 
-$EXEC_PREFIX curl -fail "$GRADLE_URL"  > demo.zip
+$EXEC_PREFIX curl --fail "$GRADLE_URL"  > demo.zip
 
 unzip demo.zip
 cd demo
@@ -29,7 +29,7 @@ rm -rf demo && rm -rf demo.zip
 
 #Test maven build
 
-$EXEC_PREFIX curl -fail "$MAVEN_URL" > demo.zip
+$EXEC_PREFIX curl --fail "$MAVEN_URL" > demo.zip
 unzip demo.zip
 cd demo
 ./mvnw package -DskipTests
