@@ -1,7 +1,6 @@
 version: 2
 jobs:
   build:
-#    machine: true
     docker:
       - image: circleci/openjdk:8u232-node
     working_directory: ~/start.eventuate.io
@@ -11,7 +10,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-     - restore_cache:
+      - restore_cache:
           keys:
             - start.eventuate.io-{{ checksum "pom.xml" }}-{{ checksum "start-site/pom.xml" }}
             - start.eventuate.io-
