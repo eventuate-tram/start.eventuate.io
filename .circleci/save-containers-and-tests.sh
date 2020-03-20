@@ -2,13 +2,13 @@
 
 #mkdir -p ~/junit ~/container-logs
 
-DIR=~/container-logs
+DIR=/root/container-logs
 
-mkdir -p ${DIR}
-docker ps -a > ${DIR}/containers.txt
+sudo mkdir -p ${DIR}
+sudo docker ps -a > ${DIR}/containers.txt
 
 for container in $(docker ps -a --format '{{.Names}}' ) ; do
-  docker logs "$container" > "${DIR}/${container}.log"
+  sudo docker logs "$container" > "${DIR}/${container}.log"
 done
 
 sudo bash -c 'find ~/container-logs -type f -exec chown circleci {} \;'
