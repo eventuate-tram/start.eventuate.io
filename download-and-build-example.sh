@@ -2,14 +2,17 @@
 
 set -e
 
-GRADLE_URL="http://$DOCKER_HOST_IP:8080/starter.zip?type=gradle-project&language=java&bootVersion=2.2.5.RELEASE&baseDir=demo&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&packaging=jar&javaVersion=1.8&dependencies=eventuatelocal,eventuatelocaltestsupport,eventuatetrambasicmessaging,eventuatetramdomainevents,eventuatetramcommands,eventuatetramkafka,eventuatetramactivemq,eventuatetramrabbitmqmq,eventuatetramredis,eventuatetramsagaorchestrator,eventuatetramsagaparticipant"
-MAVEN_URL="http://$DOCKER_HOST_IP:8080/starter.zip?type=maven-project&language=java&bootVersion=2.2.5.RELEASE&baseDir=demo&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&packaging=jar&javaVersion=1.8&dependencies=eventuatelocal,eventuatelocaltestsupport,eventuatetrambasicmessaging,eventuatetramdomainevents,eventuatetramcommands,eventuatetramkafka,eventuatetramactivemq,eventuatetramrabbitmqmq,eventuatetramredis,eventuatetramsagaorchestrator,eventuatetramsagaparticipant"
+GRADLE_URL="http://${DOCKER_HOST_IP?}:8080/starter.zip?type=gradle-project&language=java&bootVersion=2.2.5.RELEASE&baseDir=demo&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&packaging=jar&javaVersion=1.8&dependencies=eventuatelocal,eventuatelocaltestsupport,eventuatetrambasicmessaging,eventuatetramdomainevents,eventuatetramcommands,eventuatetramkafka,eventuatetramactivemq,eventuatetramrabbitmqmq,eventuatetramredis,eventuatetramsagaorchestrator,eventuatetramsagaparticipant"
+MAVEN_URL="http://${DOCKER_HOST_IP?}:8080/starter.zip?type=maven-project&language=java&bootVersion=2.2.5.RELEASE&baseDir=demo&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&packaging=jar&javaVersion=1.8&dependencies=eventuatelocal,eventuatelocaltestsupport,eventuatetrambasicmessaging,eventuatetramdomainevents,eventuatetramcommands,eventuatetramkafka,eventuatetramactivemq,eventuatetramrabbitmqmq,eventuatetramredis,eventuatetramsagaorchestrator,eventuatetramsagaparticipant"
 
 
 ./stop.sh
 rm -rf demo && rm -rf demo.zip
 
-./build-and-run.sh
+docker-compose up --build -d
+
+docker ps
+
 ./_wait-for-services.sh /actuator/health 8080
 
 #TEST gradle build
