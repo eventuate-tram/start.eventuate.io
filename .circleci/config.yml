@@ -19,7 +19,7 @@ jobs:
           paths:
             - ~/.gradle
             - ~/.m2
-          key:         start.eventuate.io-{{{ checksum "pom.xml" }}-{{ checksum "start-site/pom.xml" }}
+          key:         start.eventuate.io-{{ checksum "pom.xml" }}-{{ checksum "start-site/pom.xml" }}
       - run: TERM=dumb ./build-all.sh
       - run: TERM=dumb ./download-and-build-example.sh
       - run:
