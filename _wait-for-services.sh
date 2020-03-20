@@ -28,6 +28,12 @@ while [[ "$done" = false ]]; do
 		echo connected
 		break;
   fi
-	echo -n .
+	STOPPED_CONTAINERS=$(docker ps -a | egrep 'start.*Exited')
+  if [ ! -z "$STOPPED_CONTAINERS" ] ; then
+				 echo stopped exited containers
+				 echo $STOPPED_CONTAINERS
+				 exit 99
+  fi
+ 	echo -n .
 	sleep 1
 done
