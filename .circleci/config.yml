@@ -1,10 +1,13 @@
 version: 2
 jobs:
   build-all:
-    machine: true
+#    machine: true
+    docker:
+      - image: circleci/openjdk:8u232-node
     working_directory: ~/start.eventuate.io
     steps:
       - checkout
+      - setup_remote_docker
       - run: TERM=dumb ./build-all.sh
       - run:
           name: Save build results
