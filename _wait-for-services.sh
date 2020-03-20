@@ -15,7 +15,7 @@ done=false
 while [[ "$done" = false ]]; do
 	for port in $ports; do
 		url=http://${host}:${port}$path
-		curl --fail $url >& /dev/null
+		$EXEC_PREFIX curl --fail $url >& /dev/null
 		if [[ "$?" -eq "0" ]]; then
 			done=true
 		else
@@ -28,7 +28,7 @@ while [[ "$done" = false ]]; do
 		echo connected
 		break;
   fi
-	STOPPED_CONTAINERS=$(docker ps -a | egrep 'start.*Exited')
+	STOPPED_CONTAINERS=$(docker ps -a | egrep 'starteventuateio.*Exited')
   if [ ! -z "$STOPPED_CONTAINERS" ] ; then
 				 echo stopped exited containers
 				 echo $STOPPED_CONTAINERS

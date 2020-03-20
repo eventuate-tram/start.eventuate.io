@@ -5,9 +5,22 @@ jobs:
     docker:
       - image: circleci/openjdk:8u232-node
     working_directory: ~/start.eventuate.io
+    environment:
+      EXEC_PREFIX: "docker exec -i starteventuateio_startsite_1 "
+      DOCKER_HOST_IP: localhost
     steps:
       - checkout
       - setup_remote_docker
+     - restore_cache:
+          keys:
+            - start.eventuate.io-{{ checksum "pom.xml" }}-{{ checksum "start-site/pom.xml" }}
+            - start.eventuate.io-
+      - run: TERM=dumb ./mvnw compile -pl start-site
+      - save_cache:
+          paths:
+            - ~/.gradle
+            - ~/.m2
+          key:         start.eventuate.io-{{{ checksum "pom.xml" }}-{{ checksum "start-site/pom.xml" }}
       - run: TERM=dumb ./build-all.sh
       - run: TERM=dumb ./download-and-build-example.sh
       - run:
