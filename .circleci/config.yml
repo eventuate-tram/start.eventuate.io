@@ -6,6 +6,7 @@ jobs:
     steps:
       - checkout
       - run: TERM=dumb ./build-all.sh
+      - run: TERM=dumb ./download-and-build-example.sh
       - run:
           name: Save build results
           command: |
