@@ -28,3 +28,6 @@ jobs:
           when: always
       - store_artifacts:
           path: ~/container-logs
+      - run:
+          name: Publish docker image
+          command: ./.circleci/publish-docker-images.sh

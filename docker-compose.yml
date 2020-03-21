@@ -3,6 +3,6 @@ services:
   startsite:
     build:
       context: ./start-site/
-    image: eventuatestarter/start-site
+    image: eventuateio/start-eventuate-io
     ports:
       - "8080:8080"

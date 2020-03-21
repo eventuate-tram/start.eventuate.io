@@ -5,10 +5,10 @@
 DIR=/root/container-logs
 
 sudo mkdir -p ${DIR}
-sudo docker ps -a > ${DIR}/containers.txt
+sudo bash -c "docker ps -a > ${DIR}/containers.txt"
 
 for container in $(docker ps -a --format '{{.Names}}' ) ; do
-  sudo docker logs "$container" > "${DIR}/${container}.log"
+  sudo bash -c "docker logs \"$container\" > \"${DIR}/${container}.log\""
 done
 
-sudo bash -c 'find ~/container-logs -type f -exec chown circleci {} \;'
+sudo bash -c "find $DIR -type f -exec chown circleci {} \;"
