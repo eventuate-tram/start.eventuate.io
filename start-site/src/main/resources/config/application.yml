@@ -104,6 +104,17 @@ custom:
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Tram Testing Support
+            id: eventuatetramtestingsupport
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-testing-support
+            version: 0.24.0.RC5
+            scope: test
+            description: Provides a DSL for writing unit tests.
+            starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
       - name: Eventuate Tram Sagas
         content:
           - name: Saga Orchestrator
@@ -124,6 +135,17 @@ custom:
             version: 0.13.0.RC5
             scope: compile
             description: Participant part of sagas framework
+            starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-sagas
+          - name: Saga Testing Support
+            id: eventuatetramsagatestingsupport
+            groupId: io.eventuate.tram.sagas
+            artifactId: eventuate-tram-sagas-spring-testing-support
+            version: 0.13.0.RC5
+            scope: compile
+            description: Provides a DSL for writing unit tests.
             starter: false
             links:
               - rel: reference
