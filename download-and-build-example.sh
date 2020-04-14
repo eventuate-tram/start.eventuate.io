@@ -2,9 +2,23 @@
 
 set -e
 
-GRADLE_URL="http://${DOCKER_HOST_IP}:8080/starter.zip?type=gradle-project&language=java&bootVersion=2.2.5.RELEASE&baseDir=demo&groupId=com.example&artifactId=demo&name=demo&description=Demo&packageName=com.example.demo&packaging=jar&javaVersion=1.8&dependencies=eventuatelocal,eventuatelocaltestsupport,eventuatetrambasicmessaging,eventuatetramdomainevents,eventuatetramcommands,eventuatetramkafka,eventuatetramactivemq,eventuatetramrabbitmqmq,eventuatetramredis,eventuatetramsagaorchestrator,eventuatetramsagaparticipant"
-MAVEN_URL="http://${DOCKER_HOST_IP}:8080/starter.zip?type=maven-project&language=java&bootVersion=2.2.5.RELEASE&baseDir=demo&groupId=com.example&artifactId=demo&name=demo&description=Demo&packageName=com.example.demo&packaging=jar&javaVersion=1.8&dependencies=eventuatelocal,eventuatelocaltestsupport,eventuatetrambasicmessaging,eventuatetramdomainevents,eventuatetramcommands,eventuatetramkafka,eventuatetramactivemq,eventuatetramrabbitmqmq,eventuatetramredis,eventuatetramsagaorchestrator,eventuatetramsagaparticipant"
+URL="http://${DOCKER_HOST_IP}:8080/starter.zip"
+GRADLE_TYPE="type=gradle-project"
+MAVEN_TYPE="type=maven-project"
+LANG="language=java"
+BOOT_VERSION="bootVersion=2.2.5.RELEASE"
+BASE_DIR="baseDir=demo"
+GROUP_ID="groupId=com.example"
+ARTIFACT_ID="artifactId=demo"
+NAME="name=demo"
+DESCRIPTION="description=Demo"
+PACKAGE="packageName=com.example.demo"
+PACKAGING="packaging=jar"
+JAVA_VERSION="javaVersion=1.8"
+DEPS="dependencies=eventuatelocal,eventuatelocaltestsupport,eventuatetrambasicmessaging,eventuatetramdomainevents,eventuatetramcommands,eventuatetramkafka,eventuatetramactivemq,eventuatetramrabbitmqmq,eventuatetramredis,eventuatetramtestingsupport,eventuatetramsagaorchestrator,eventuatetramsagaparticipant,eventuatetramsagatestingsupport"
+OUTPUT=demo.zip
 
+CURL_ARGS_COMMON="$URL -d $LANG -d $BOOT_VERSION -d $BASE_DIR -d $GROUP_ID -d $ARTIFACT_ID -d $NAME -d $DESCRIPTION -d $PACKAGE -d $PACKAGING -d $JAVA_VERSION -d $DEPS -o $OUTPUT"
 
 # ./stop.sh
 
@@ -18,7 +32,7 @@ docker ps
 
 #TEST gradle build
 
-$EXEC_PREFIX curl --fail "$GRADLE_URL"  > demo.zip
+$EXEC_PREFIX curl --fail -d $GRADLE_TYPE $CURL_ARGS_COMMON
 
 unzip demo.zip
 cd demo
@@ -29,7 +43,7 @@ rm -rf demo && rm -rf demo.zip
 
 #Test maven build
 
-$EXEC_PREFIX curl --fail "$MAVEN_URL" > demo.zip
+$EXEC_PREFIX curl --fail -d $MAVEN_TYPE $CURL_ARGS_COMMON
 unzip demo.zip
 cd demo
 ./mvnw package -DskipTests

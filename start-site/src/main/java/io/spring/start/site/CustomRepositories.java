@@ -9,10 +9,8 @@ public class CustomRepositories {
 
 	public static final List<MavenRepository> EVENTUATE_REPOSITORIES = Arrays.asList(
 			MavenRepository
-					.withIdAndUrl("eventuate-release",
-							"https://dl.bintray.com/eventuateio-oss/eventuate-maven-release/")
-					.name("eventute-release").build(),
-			MavenRepository.withIdAndUrl("eventuate-rc", "https://dl.bintray.com/eventuateio-oss/eventuate-maven-rc")
-					.name("eventute-rc").build());
+					.withIdAndUrl("jcenter", "https://jcenter.bintray.com/")
+					.name("jcenter")
+					.build());
 
 }
