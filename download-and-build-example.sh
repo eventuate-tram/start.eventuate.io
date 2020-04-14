@@ -34,6 +34,8 @@ docker ps
 
 $EXEC_PREFIX curl --fail -d $GRADLE_TYPE $CURL_ARGS_COMMON
 
+sleep 10
+
 unzip demo.zip
 cd demo
 ./gradlew assemble
@@ -44,6 +46,9 @@ rm -rf demo && rm -rf demo.zip
 #Test maven build
 
 $EXEC_PREFIX curl --fail -d $MAVEN_TYPE $CURL_ARGS_COMMON
+
+sleep 10
+
 unzip demo.zip
 cd demo
 ./mvnw package -DskipTests
