@@ -7,7 +7,7 @@ custom:
             id: eventuatelocal
             groupId: io.eventuate.local.java
             artifactId: eventuate-local-java-spring-jdbc
-            version: 0.32.0.RC5
+            version: 0.32.0.RELEASE
             scope: compile
             description: A framework for developing (microservice-based) applications.
             starter: false
@@ -18,7 +18,7 @@ custom:
             id: eventuatelocaltestsupport
             groupId: io.eventuate.client.java
             artifactId: eventuate-client-java-spring-jdbc
-            version: 0.23.0.RC5
+            version: 0.23.0.RELEASE
             scope: test
             description: Embedded JDBC-based version for writing integration tests
             starter: false
@@ -31,7 +31,7 @@ custom:
             id: eventuatetrambasicmessaging
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-spring-messaging
-            version: 0.24.0.RC5
+            version: 0.24.0.RELEASE
             scope: compile
             description: A framework for transactional messaging.
             starter: false
@@ -42,7 +42,7 @@ custom:
             id: eventuatetramdomainevents
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-spring-events
-            version: 0.24.0.RC5
+            version: 0.24.0.RELEASE
             scope: compile
             description: A framework for transactional messaging.
             starter: false
@@ -53,7 +53,7 @@ custom:
             id: eventuatetramcommands
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-spring-commands
-            version: 0.24.0.RC5
+            version: 0.24.0.RELEASE
             scope: compile
             description: A framework for transactional messaging.
             starter: false
@@ -64,7 +64,7 @@ custom:
             id: eventuatetramkafka
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-spring-jdbc-kafka
-            version: 0.24.0.RC5
+            version: 0.24.0.RELEASE
             scope: compile
             description: JDBC and Apache Kafka as the underlying messaging transport.
             starter: false
@@ -75,7 +75,7 @@ custom:
             id: eventuatetramactivemq
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-jdbc-activemq
-            version: 0.24.0.RC5
+            version: 0.24.0.RELEASE
             scope: compile
             description: JDBC and Apache ActiveMQ as the underlying messaging transport.
             starter: false
@@ -86,7 +86,7 @@ custom:
             id: eventuatetramrabbitmqmq
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-jdbc-rabbitmq
-            version: 0.24.0.RC5
+            version: 0.24.0.RELEASE
             scope: compile
             description: JDBC and RabbitMQ as the underlying messaging transport.
             starter: false
@@ -97,7 +97,7 @@ custom:
             id: eventuatetramredis
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-jdbc-redis
-            version: 0.24.0.RC5
+            version: 0.24.0.RELEASE
             scope: compile
             description: JDBC and Redis as the underlying messaging transport.
             starter: false
@@ -108,7 +108,7 @@ custom:
             id: eventuatetramtestingsupport
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-testing-support
-            version: 0.24.0.RC5
+            version: 0.24.0.RELEASE
             scope: test
             description: Provides a DSL for writing unit tests.
             starter: false
@@ -121,7 +121,7 @@ custom:
             id: eventuatetramsagaorchestrator
             groupId: io.eventuate.tram.sagas
             artifactId: eventuate-tram-sagas-spring-orchestration-simple-dsl
-            version: 0.13.0.RC5
+            version: 0.13.0.RELEASE
             scope: compile
             description: Orchestrator part of sagas framework
             starter: false
@@ -132,7 +132,7 @@ custom:
             id: eventuatetramsagaparticipant
             groupId: io.eventuate.tram.sagas
             artifactId: eventuate-tram-sagas-spring-participant
-            version: 0.13.0.RC5
+            version: 0.13.0.RELEASE
             scope: compile
             description: Participant part of sagas framework
             starter: false
@@ -143,7 +143,7 @@ custom:
             id: eventuatetramsagatestingsupport
             groupId: io.eventuate.tram.sagas
             artifactId: eventuate-tram-sagas-spring-testing-support
-            version: 0.13.0.RC5
+            version: 0.13.0.RELEASE
             scope: compile
             description: Provides a DSL for writing unit tests.
             starter: false
