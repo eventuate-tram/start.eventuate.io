@@ -32,6 +32,7 @@ docker ps
 
 #TEST gradle build
 
+echo Executing: $EXEC_PREFIX curl --fail -d $GRADLE_TYPE $CURL_ARGS_COMMON
 $EXEC_PREFIX curl --fail -d $GRADLE_TYPE $CURL_ARGS_COMMON
 
 sleep 10
@@ -45,6 +46,7 @@ rm -rf demo && rm -rf demo.zip
 
 #Test maven build
 
+echo Executing: $EXEC_PREFIX curl --fail -d $MAVEN_TYPE $CURL_ARGS_COMMON
 $EXEC_PREFIX curl --fail -d $MAVEN_TYPE $CURL_ARGS_COMMON
 
 sleep 10
