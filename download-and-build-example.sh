@@ -18,7 +18,7 @@ JAVA_VERSION="javaVersion=1.8"
 DEPS="dependencies=eventuatelocal,eventuatelocaltestsupport,eventuatetrambasicmessaging,eventuatetramdomainevents,eventuatetramcommands,eventuatetramkafka,eventuatetramactivemq,eventuatetramrabbitmqmq,eventuatetramredis,eventuatetramtestingsupport,eventuatetramsagaorchestrator,eventuatetramsagaparticipant,eventuatetramsagatestingsupport"
 OUTPUT=demo.zip
 
-CURL_ARGS_COMMON="$URL -d $LANG -d $BOOT_VERSION -d $BASE_DIR -d $GROUP_ID -d $ARTIFACT_ID -d $NAME -d $DESCRIPTION -d $PACKAGE -d $PACKAGING -d $JAVA_VERSION -d $DEPS -o $OUTPUT"
+CURL_ARGS_COMMON="$URL -d $LANG -d $BOOT_VERSION -d $BASE_DIR -d $GROUP_ID -d $ARTIFACT_ID -d $NAME -d $DESCRIPTION -d $PACKAGE -d $PACKAGING -d $JAVA_VERSION -d $DEPS"
 
 # ./stop.sh
 
@@ -33,7 +33,7 @@ docker ps
 #TEST gradle build
 
 echo Executing: $EXEC_PREFIX curl --fail -d $GRADLE_TYPE $CURL_ARGS_COMMON
-$EXEC_PREFIX curl --fail -d $GRADLE_TYPE $CURL_ARGS_COMMON
+$EXEC_PREFIX curl --fail -d $GRADLE_TYPE $CURL_ARGS_COMMON > $OUTPUT
 
 unzip demo.zip
 cd demo
@@ -45,7 +45,8 @@ rm -rf demo && rm -rf demo.zip
 #Test maven build
 
 echo Executing: $EXEC_PREFIX curl --fail -d $MAVEN_TYPE $CURL_ARGS_COMMON
-$EXEC_PREFIX curl --fail -d $MAVEN_TYPE $CURL_ARGS_COMMON
+$EXEC_PREFIX curl --fail -d $MAVEN_TYPE $CURL_ARGS_COMMON > $OUTPUT
+
 unzip demo.zip
 cd demo
 ./mvnw package -DskipTests
