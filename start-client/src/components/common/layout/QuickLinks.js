@@ -42,7 +42,7 @@ const QuickLinks = () => {
       </li>
       <li>
         <a
-          href='https://github.com/spring-io/start.spring.io'
+          href='https://github.com/eventuate-tram'
           rel='noreferrer noopener'
           target='_blank'
           tabIndex='-1'
@@ -53,7 +53,7 @@ const QuickLinks = () => {
       </li>
       <li>
         <a
-          href='https://twitter.com/springboot'
+          href='https://twitter.com/eventuateio'
           rel='noreferrer noopener'
           target='_blank'
           tabIndex='-1'
@@ -61,75 +61,6 @@ const QuickLinks = () => {
           <IconTwitter />
           Twitter
         </a>
-      </li>
-      <li>
-        <a
-          href='/'
-          className='dropdown'
-          tabIndex='-1'
-          onClick={e => {
-            e.preventDefault()
-            setHelp(!help)
-          }}
-          ref={wrapper}
-        >
-          <IconSpring />
-          Help
-          <IconCaretDown className='caret' />
-        </a>
-
-        <TransitionGroup component={null}>
-          {help && (
-            <CSSTransition classNames='nav-anim' timeout={500}>
-              <ul className='dropdown-menu'>
-                <li>
-                  <a
-                    id='ql-help-projects'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='https://spring.io/projects'
-                    tabIndex='-1'
-                  >
-                    Spring Projects
-                  </a>
-                </li>
-                <li>
-                  <a
-                    id='ql-help-guides'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    tabIndex='-1'
-                    href='https://spring.io/guides'
-                  >
-                    Spring Guides
-                  </a>
-                </li>
-                <li>
-                  <a
-                    id='ql-help-spring-blog'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    tabIndex='-1'
-                    href='https://spring.io/blog'
-                  >
-                    What&apos;s New With Spring
-                  </a>
-                </li>
-                <li>
-                  <a
-                    id='ql-help-migration'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    tabIndex='-1'
-                    href='https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide'
-                  >
-                    Migrate from 1.5 =&gt; 2.0
-                  </a>
-                </li>
-              </ul>
-            </CSSTransition>
-          )}
-        </TransitionGroup>
       </li>
     </ul>
   )

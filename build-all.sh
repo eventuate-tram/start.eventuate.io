@@ -2,5 +2,5 @@
 
 set -e
 
-./mvnw package -DskipTests
+./mvnw install -DskipTests
 docker-compose build

@@ -27,7 +27,7 @@ custom:
                 href: https://github.com/eventuate-local/eventuate-local
       - name: Eventuate Tram
         content:
-          - name: Basic messaging
+          - name: Eventuate Basic messaging
             id: eventuatetrambasicmessaging
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-spring-messaging
@@ -38,7 +38,7 @@ custom:
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
-          - name: Domain Events
+          - name: Eventuate Domain Events
             id: eventuatetramdomainevents
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-spring-events
@@ -49,7 +49,7 @@ custom:
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
-          - name: Command/Async Reply messaging
+          - name: Eventuate Command/Async Reply messaging
             id: eventuatetramcommands
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-spring-commands
@@ -60,7 +60,7 @@ custom:
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
-          - name: Kafka Transport
+          - name: Eventuate Kafka Transport
             id: eventuatetramkafka
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-spring-jdbc-kafka
@@ -71,7 +71,7 @@ custom:
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
-          - name: ActiveMQ Transport
+          - name: Eventuate ActiveMQ Transport
             id: eventuatetramactivemq
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-jdbc-activemq
@@ -82,7 +82,7 @@ custom:
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
-          - name: RabbitMQ Transport
+          - name: Eventuate RabbitMQ Transport
             id: eventuatetramrabbitmqmq
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-jdbc-rabbitmq
@@ -93,7 +93,7 @@ custom:
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
-          - name: Redis Transport
+          - name: Eventuate Redis Transport
             id: eventuatetramredis
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-jdbc-redis
@@ -104,7 +104,7 @@ custom:
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
-          - name: Tram Testing Support
+          - name: Eventuate Tram Testing Support
             id: eventuatetramtestingsupport
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-testing-support
@@ -117,7 +117,7 @@ custom:
                 href: https://github.com/eventuate-tram/eventuate-tram-core
       - name: Eventuate Tram Sagas
         content:
-          - name: Saga Orchestrator
+          - name: Eventuate Saga Orchestrator
             id: eventuatetramsagaorchestrator
             groupId: io.eventuate.tram.sagas
             artifactId: eventuate-tram-sagas-spring-orchestration-simple-dsl
@@ -128,7 +128,7 @@ custom:
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-sagas
-          - name: Saga Participant
+          - name: Eventuate Saga Participant
             id: eventuatetramsagaparticipant
             groupId: io.eventuate.tram.sagas
             artifactId: eventuate-tram-sagas-spring-participant
@@ -139,7 +139,7 @@ custom:
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-sagas
-          - name: Saga Testing Support
+          - name: Eventuate Saga Testing Support
             id: eventuatetramsagatestingsupport
             groupId: io.eventuate.tram.sagas
             artifactId: eventuate-tram-sagas-spring-testing-support
