@@ -1,17 +1,13 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Logo from './Logo'
+import Logo from '../../../images/initializr-icon.png'
 
 const Header = ({ children }) => (
   <div className='header'>
-    <h1 className='logo'>
+    <h1 >
       <a href='/'>
-        <Logo />
-        <span className='title'>
-          Spring <strong>Initializr</strong>
-        </span>
-        <span className='description'>Bootstrap your application</span>
+        <img src={Logo}></img>
       </a>
     </h1>
     {children}

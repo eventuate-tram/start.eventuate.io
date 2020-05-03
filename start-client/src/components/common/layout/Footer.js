@@ -7,31 +7,10 @@ const Footer = ({ children }) => (
       <div className='left nopadding'>
         <footer className='footer'>
           <div className='footer-container'>
-            © 2013-{new Date().getFullYear()} VMware, Inc.
+            Copyright (c) 2020, Eventuate Inc
             <br />
-            start.spring.io is powered by
+            © 2013-2020 VMware, Inc.
             <br />
-            <span>
-              <a
-                tabIndex='-1'
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://github.com/spring-io/initializr/'
-              >
-                Spring Initializr
-              </a>
-            </span>{' '}
-            <span>and</span>{' '}
-            <span>
-              <a
-                tabIndex='-1'
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://run.pivotal.io/'
-              >
-                Pivotal Web Services
-              </a>
-            </span>
           </div>
         </footer>
       </div>
