@@ -14,7 +14,7 @@ custom:
             links:
               - rel: reference
                 href: https://github.com/eventuate-local/eventuate-local
-          - name: Eventuate Local Test Suport
+          - name: Eventuate Local Test Support
             id: eventuatelocaltestsupport
             groupId: io.eventuate.client.java
             artifactId: eventuate-client-java-spring-jdbc
