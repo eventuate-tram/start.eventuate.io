@@ -1,5 +1,11 @@
 custom:
   initializr:
+    env:
+      boms:
+        eventuate-bom:
+          groupId: io.eventuate.platform
+          artifactId: platform-dependencies
+          version: 0.1.0.BUILD-SNAPSHOT
     dependencies:
       - name: Eventuate Local
         content:
@@ -7,34 +13,111 @@ custom:
             id: eventuatelocal
             groupId: io.eventuate.local.java
             artifactId: eventuate-local-java-spring-jdbc
-            version: 0.32.0.RELEASE
+            version: 0.33.0.RELEASE
             scope: compile
             description: A framework for developing (microservice-based) applications.
             starter: false
             links:
               - rel: reference
                 href: https://github.com/eventuate-local/eventuate-local
+          - name: Eventuate Local (BOM)
+            id: eventuatelocalbom
+            groupId: io.eventuate.local.java
+            artifactId: eventuate-local-java-spring-jdbc
+            scope: compile
+            description: A framework for developing (microservice-based) applications managed by Maven BOM.
+            starter: false
+            bom: eventuate-bom
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-local/eventuate-local
+          - name: Eventuate Local Starter
+            id: eventuatelocalstarter
+            groupId: io.eventuate.local.java
+            artifactId: eventuate-local-java-spring-jdbc-starter
+            version: 0.33.0.RELEASE
+            scope: compile
+            description: Eventuate Spring Starter for Eventuate Local.
+            starter: true
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-local/eventuate-local
+          - name: Eventuate Local Starter (BOM)
+            id: eventuatelocalstarterbom
+            groupId: io.eventuate.local.java
+            artifactId: eventuate-local-java-spring-jdbc-starter
+            scope: compile
+            description: Eventuate Spring Starter for Eventuate Local managed by Maven BOM.
+            starter: true
+            bom: eventuate-bom
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-local/eventuate-local
           - name: Eventuate Local Test Support
             id: eventuatelocaltestsupport
-            groupId: io.eventuate.client.java
+            groupId: io.eventuate.local.java
             artifactId: eventuate-client-java-spring-jdbc
-            version: 0.23.0.RELEASE
+            version: 0.33.0.RELEASE
             scope: test
             description: Embedded JDBC-based version for writing integration tests
             starter: false
             links:
               - rel: reference
                 href: https://github.com/eventuate-local/eventuate-local
+          - name: Eventuate Local Test Support (BOM)
+            id: eventuatelocaltestsupportbom
+            groupId: io.eventuate.local.java
+            artifactId: eventuate-client-java-spring-jdbc
+            scope: test
+            description: Embedded JDBC-based version for writing integration tests managed by Maven BOM
+            starter: false
+            bom: eventuate-bom
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-local/eventuate-local
       - name: Eventuate Tram
         content:
-          - name: Eventuate Basic messaging
+          - name: Eventuate Basic Messaging
             id: eventuatetrambasicmessaging
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-spring-messaging
-            version: 0.24.0.RELEASE
+            version: 0.25.1.RELEASE
             scope: compile
             description: A framework for transactional messaging.
             starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Eventuate Basic Messaging (BOM)
+            id: eventuatetrambasicmessagingbom
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-spring-messaging
+            scope: compile
+            description: A framework for transactional messaging managed by Maven BOM.
+            starter: false
+            bom: eventuate-bom
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Eventuate Messaging Starter
+            id: eventuatetrambasicmessagingstarter
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-spring-messaging-starter
+            version: 0.25.1.RELEASE
+            scope: compile
+            description: Eventuate Spring Starter for Basic Messaging.
+            starter: true
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Eventuate Messaging Starter (Bom)
+            id: eventuatetrambasicmessagingstarterbom
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-spring-messaging-starter
+            scope: compile
+            description: Eventuate Spring Starter for Basic Messaging managed by maven BOM.
+            starter: true
+            bom: eventuate-bom
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
@@ -42,10 +125,43 @@ custom:
             id: eventuatetramdomainevents
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-spring-events
-            version: 0.24.0.RELEASE
+            version: 0.25.1.RELEASE
             scope: compile
             description: A framework for transactional messaging.
             starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Eventuate Domain Events (BOM)
+            id: eventuatetramdomaineventsbom
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-spring-events
+            scope: compile
+            description: A framework for transactional messaging managed by Maven BOM.
+            starter: false
+            bom: eventuate-bom
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Eventuate Domain Events Starter
+            id: eventuatetramdomaineventsstarter
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-spring-events-starter
+            version: 0.25.1.RELEASE
+            scope: compile
+            description: Eventuate Spring Starter for Eventuate Domain Events managed.
+            starter: true
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Eventuate Domain Events Starter (BOM)
+            id: eventuatetramdomaineventsstarterbom
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-spring-events-starter
+            scope: compile
+            description: Eventuate Spring Starter for Eventuate Domain Events managed by Maven BOM.
+            starter: true
+            bom: eventuate-bom
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
@@ -53,10 +169,43 @@ custom:
             id: eventuatetramcommands
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-spring-commands
-            version: 0.24.0.RELEASE
+            version: 0.25.1.RELEASE
             scope: compile
             description: A framework for transactional messaging.
             starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Eventuate Command/Async Reply messaging (BOM)
+            id: eventuatetramcommandsbom
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-spring-commands
+            scope: compile
+            description: A framework for transactional messaging managed by Maven BOM.
+            bom: eventuate-bom
+            starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Eventuate Commands Starter
+            id: eventuatetramcommandsstarter
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-spring-commands-starter
+            version: 0.25.1.RELEASE
+            scope: compile
+            description: Eventuate Spring Starter for Eventuate Command/Async Reply messaging
+            starter: true
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Eventuate Commands Starter (BOM)
+            id: eventuatetramcommandsstarterbom
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-spring-commands-starter
+            scope: compile
+            description: Eventuate Spring Starter for Eventuate Command/Async Reply messaging managed by Maven BOM.
+            starter: true
+            bom: eventuate-bom
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
@@ -64,10 +213,21 @@ custom:
             id: eventuatetramkafka
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-spring-jdbc-kafka
-            version: 0.24.0.RELEASE
+            version: 0.25.1.RELEASE
             scope: compile
             description: JDBC and Apache Kafka as the underlying messaging transport.
             starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Eventuate Kafka Transport (BOM)
+            id: eventuatetramkafkabom
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-spring-jdbc-kafka
+            scope: compile
+            description: JDBC and Apache Kafka as the underlying messaging transport managed by Maven BOM.
+            starter: false
+            bom: eventuate-bom
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
@@ -75,10 +235,21 @@ custom:
             id: eventuatetramactivemq
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-jdbc-activemq
-            version: 0.24.0.RELEASE
+            version: 0.25.1.RELEASE
             scope: compile
             description: JDBC and Apache ActiveMQ as the underlying messaging transport.
             starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Eventuate ActiveMQ Transport (BOM)
+            id: eventuatetramactivemqbom
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-jdbc-activemq
+            scope: compile
+            description: JDBC and Apache ActiveMQ as the underlying messaging transport managed by Maven BOM.
+            starter: false
+            bom: eventuate-bom
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
@@ -86,10 +257,21 @@ custom:
             id: eventuatetramrabbitmqmq
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-jdbc-rabbitmq
-            version: 0.24.0.RELEASE
+            version: 0.25.1.RELEASE
             scope: compile
             description: JDBC and RabbitMQ as the underlying messaging transport.
             starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Eventuate RabbitMQ Transport (BOM)
+            id: eventuatetramrabbitmqmqbom
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-jdbc-rabbitmq
+            scope: compile
+            description: JDBC and RabbitMQ as the underlying messaging transport managed by maven BOM.
+            starter: false
+            bom: eventuate-bom
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
@@ -97,10 +279,21 @@ custom:
             id: eventuatetramredis
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-jdbc-redis
-            version: 0.24.0.RELEASE
+            version: 0.25.1.RELEASE
             scope: compile
             description: JDBC and Redis as the underlying messaging transport.
             starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Eventuate Redis Transport (BOM)
+            id: eventuatetramredisbom
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-jdbc-redis
+            scope: compile
+            description: JDBC and Redis as the underlying messaging transport managed by Maven BOM.
+            starter: false
+            bom: eventuate-bom
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
@@ -108,10 +301,21 @@ custom:
             id: eventuatetramtestingsupport
             groupId: io.eventuate.tram.core
             artifactId: eventuate-tram-testing-support
-            version: 0.24.0.RELEASE
+            version: 0.25.1.RELEASE
             scope: test
             description: Provides a DSL for writing unit tests.
             starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-core
+          - name: Eventuate Tram Testing Support (BOM)
+            id: eventuatetramtestingsupportbom
+            groupId: io.eventuate.tram.core
+            artifactId: eventuate-tram-testing-support
+            scope: test
+            description: Provides a DSL for writing unit tests managed by Maven BOM.
+            starter: false
+            bom: eventuate-bom
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-core
@@ -121,10 +325,43 @@ custom:
             id: eventuatetramsagaorchestrator
             groupId: io.eventuate.tram.sagas
             artifactId: eventuate-tram-sagas-spring-orchestration-simple-dsl
-            version: 0.13.0.RELEASE
+            version: 0.14.0.RELEASE
             scope: compile
             description: Orchestrator part of sagas framework
             starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-sagas
+          - name: Eventuate Saga Orchestrator (BOM)
+            id: eventuatetramsagaorchestratorbom
+            groupId: io.eventuate.tram.sagas
+            artifactId: eventuate-tram-sagas-spring-orchestration-simple-dsl
+            scope: compile
+            description: Orchestrator part of sagas framework managed by Maven BOM
+            starter: false
+            bom: eventuate-bom
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-sagas
+          - name: Eventuate Saga Orchestrator Starter
+            id: eventuatetramsagaorchestratorstarter
+            groupId: io.eventuate.tram.sagas
+            artifactId: eventuate-tram-sagas-spring-orchestration-simple-dsl-starter
+            version: 0.14.0.RELEASE
+            scope: compile
+            description: Eventuate Spring Starter for Eventuate Saga Orchestrator
+            starter: true
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-sagas
+          - name: Eventuate Saga Orchestrator Starter (BOM)
+            id: eventuatetramsagaorchestratorstarterbom
+            groupId: io.eventuate.tram.sagas
+            artifactId: eventuate-tram-sagas-spring-orchestration-simple-dsl-starter
+            scope: compile
+            description: Eventuate Spring Starter for Eventuate Saga Orchestrator managed by Maven BOM
+            starter: true
+            bom: eventuate-bom
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-sagas
@@ -132,10 +369,43 @@ custom:
             id: eventuatetramsagaparticipant
             groupId: io.eventuate.tram.sagas
             artifactId: eventuate-tram-sagas-spring-participant
-            version: 0.13.0.RELEASE
+            version: 0.14.0.RELEASE
             scope: compile
             description: Participant part of sagas framework
             starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-sagas
+          - name: Eventuate Saga Participant (BOM)
+            id: eventuatetramsagaparticipantbom
+            groupId: io.eventuate.tram.sagas
+            artifactId: eventuate-tram-sagas-spring-participant
+            scope: compile
+            description: Participant part of sagas framework managed by Maven BOM.
+            starter: false
+            bom: eventuate-bom
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-sagas
+          - name: Eventuate Saga Participant Starter
+            id: eventuatetramsagaparticipantstarter
+            groupId: io.eventuate.tram.sagas
+            artifactId: eventuate-tram-sagas-spring-participant
+            version: 0.14.0.RELEASE
+            scope: compile
+            description: Eventuate Spring Starter for Eventuate Saga Participant
+            starter: true
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-sagas
+          - name: Eventuate Saga Participant Starter (BOM)
+            id: eventuatetramsagaparticipantstarterbom
+            groupId: io.eventuate.tram.sagas
+            artifactId: eventuate-tram-sagas-spring-participant
+            scope: compile
+            description: Eventuate Spring Starter for Eventuate Saga Participant managed by Maven BOM.
+            starter: true
+            bom: eventuate-bom
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-sagas
@@ -143,10 +413,21 @@ custom:
             id: eventuatetramsagatestingsupport
             groupId: io.eventuate.tram.sagas
             artifactId: eventuate-tram-sagas-spring-testing-support
-            version: 0.13.0.RELEASE
+            version: 0.14.0.RELEASE
             scope: compile
             description: Provides a DSL for writing unit tests.
             starter: false
+            links:
+              - rel: reference
+                href: https://github.com/eventuate-tram/eventuate-tram-sagas
+          - name: Eventuate Saga Testing Support (BOM)
+            id: eventuatetramsagatestingsupportbom
+            groupId: io.eventuate.tram.sagas
+            artifactId: eventuate-tram-sagas-spring-testing-support
+            scope: compile
+            description: Provides a DSL for writing unit tests managed by Maven BOM.
+            starter: false
+            bom: eventuate-bom
             links:
               - rel: reference
                 href: https://github.com/eventuate-tram/eventuate-tram-sagas
