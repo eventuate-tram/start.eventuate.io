@@ -1,4 +1,4 @@
-github-repo: "https://github.com/spring-io/start.spring.io.git"
+github-repo: "https://github.com/eventuate-platform/eventuate-platform-dependencies.git"
 github-repo-name: "spring-io/start.spring.io"
 branch: master
 artifactory-server: "https://repo.spring.io"

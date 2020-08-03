@@ -7,14 +7,14 @@ const Social = () => (
     <a
       rel='noreferrer noopener'
       target='_blank'
-      href='https://github.com/spring-io/start.spring.io'
+      href='https://github.com/eventuate-platform/eventuate-platform-dependencies'
     >
       <IconGithub />
     </a>
     <a
       rel='noreferrer noopener'
       target='_blank'
-      href='https://twitter.com/springboot'
+      href='https://twitter.com/eventuateio'
     >
       <IconTwitter />
     </a>
