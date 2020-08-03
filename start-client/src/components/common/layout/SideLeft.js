@@ -128,17 +128,6 @@ const SideLeft = () => {
                     Copyright © {new Date().getFullYear()} Eventuate, Inc.
                     <br />
                     © 2013-{new Date().getFullYear()} VMware, Inc.
-                    <br />
-                    start.spring.io is powered by{' '}
-                    <span>
-                      <a
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        href='https://github.com/spring-io/initializr/'
-                      >
-                        Spring Initializr
-                      </a>
-                    </span>{' '}
                   </div>
                 </div>
               </div>
