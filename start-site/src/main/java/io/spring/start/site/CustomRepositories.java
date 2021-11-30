@@ -11,6 +11,10 @@ public class CustomRepositories {
 			MavenRepository
 					.withIdAndUrl("jcenter", "https://jcenter.bintray.com/")
 					.name("jcenter")
-					.build());
+					.build(),
+			MavenRepository
+							.withIdAndUrl("snapshots", "https://snapshots.repositories.eventuate.io/repository")
+							.name("snapshots")
+							.build());
 
 }
